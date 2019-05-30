@@ -4,9 +4,7 @@
 
 This is a starter-kit for Twitch chat bot, if you wanna write one in Python. It utilizes the TwitchIO library and YAML files for storing secrets and config info.
 
-It's pretty basic right now, but I'll be expanding on this in the near future.
-
-The larger, more complex Twitch bot is being developed [HERE](https://github.com/NinjaBunny9000/DeepThonk) during [Live-Streams on Twitch](https://twitch.tv/ninjabunny9000).
+It's pretty basic right now, but I'll be expanding on this in the near future. The larger, more complex Twitch bot is being developed [HERE](https://github.com/NinjaBunny9000/DeepThonk) during [Live-Streams on Twitch](https://twitch.tv/ninjabunny9000).
 
 
 ## Getting Started
