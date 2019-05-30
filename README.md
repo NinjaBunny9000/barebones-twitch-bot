@@ -55,6 +55,13 @@ async def event_ready():
 ### event_message
 This function executes once per event (or message) sent. You can make it handle input from chat that *aren't* necesarily commands, and fun stuff like that.
 
+```python
+@bot.event
+async def event_message(message):
+    print(message.content)
+    await bot.handle_commands(message)
+```
+
 You can find more info in [TwitchIO's official documentation](https://twitchio.readthedocs.io/en/rewrite/twitchio.html).
 
 
