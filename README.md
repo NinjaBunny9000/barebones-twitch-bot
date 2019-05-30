@@ -2,7 +2,7 @@
 
 >**This README is a wip!**
 
-This is the barebones/starter-kit for a python twitch bot framwork. It utilizes the TwitchIO Python library and YAML files for storing secrets and config info.
+This is a starter-kit for Twitch chat bot, if you wanna write one in Python. It utilizes the TwitchIO library and YAML files for storing secrets and config info.
 
 It's pretty basic right now, but I'll be expanding on this in the near future.
 
