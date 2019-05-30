@@ -1,4 +1,4 @@
-# DeepThonk
+# Barebones Twitch Bot in Python
 
 >**This README is a wip!**
 
