@@ -11,7 +11,7 @@ The larger, more complex Twitch bot is being developed [HERE](https://github.com
 
 ## Getting Started
 
-This is a little dry atm, so if you have questions about the specifics, please ask me during streams or post an issue.
+Should be quick & easy to get up and running but, ofc, if you ever have questions about the specifics, please feel free to ask me during streams or post an issue above.
 
 ### Prerequisites
 - [Python 3.6](https://www.python.org/downloads/release/python-368/)
