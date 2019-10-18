@@ -3,3 +3,5 @@
 config/integrations\.yaml
 config/settings\.yaml
 .env
+
+README copy.md

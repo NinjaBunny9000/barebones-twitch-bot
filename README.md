@@ -2,7 +2,7 @@
 
 # Barebones Twitch Bot in Python
 
->**This README is a wip!**
+>**This is the companion repo to a [tutorial](https://dev.to/twitchbot101) on dev.to**
 
 This is a starter-kit for Twitch chat bot, if you wanna write one in Python. It utilizes the TwitchIO library and YAML files for storing secrets and config info.
 
