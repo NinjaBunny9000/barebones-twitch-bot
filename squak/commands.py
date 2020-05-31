@@ -18,7 +18,7 @@ def add(commands, bot):
         @bot.command(name=command)
         async def play_track(ctx):
             # Play the track.
-            log.info("Running ", command)
+            log.info("Running command: %s", command)
             track.play()
 
             # Give the player time to load.

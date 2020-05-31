@@ -23,26 +23,23 @@ def make(irc_token, client_id, channel, conf):
 
     # Add a ready command.
     @bot.event
-    async def ready():
+    async def event_ready():
         """
         Called once when the bot goes online.
         """
         greeting = conf.get("greeting", GREETING)
         await bot._ws.send_privmsg(channel, greeting)
-        log.info(nick, " is online")
+        log.info("%s is online", nick)
 
     # Called on every message.
     @bot.event
-    async def message(ctx):
+    async def event_message(ctx):
         """
         Runs every time a message is sent in chat.
         """
         # make sure the bot ignores itself and the streamer
         if ctx.author.name.lower() == nick.lower():
             return
-
-        # Log the message.
-        log.debug(ctx.author.name, ": ", ctx.content)
 
         # Handle commands.
         await bot.handle_commands(ctx)
