@@ -9,5 +9,5 @@ LOG_LEVELS = {
 }
 
 NICK = "squaker"
-PREFIX = ""
+PREFIX = "!"
 GREETING = "/me is live"

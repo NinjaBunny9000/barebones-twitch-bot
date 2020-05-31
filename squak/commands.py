@@ -16,7 +16,7 @@ def add(commands, bot):
 
         # Define the command.
         @bot.command(name=command)
-        async def test(ctx):
+        async def play_track(ctx):
             # Play the track.
             log.info("Running ", command)
             track.play()
