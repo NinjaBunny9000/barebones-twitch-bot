@@ -7,3 +7,7 @@ LOG_LEVELS = {
     "error": logging.ERROR,
     "critical": logging.CRITICAL,
 }
+
+NICK = "squaker"
+PREFIX = ""
+GREETING = "/me is live"

@@ -1,33 +1,28 @@
-import click
+import asyncio
+import logging
+
 import vlc
-from time import sleep
+
+log = logging.getLogger(__name__)
 
 
-@bot.event
-async def event_message(ctx):
-    "Runs every time a message is sent in chat."
+def add(commands, bot):
+    """
+    Add custom commands.
+    """
+    for command, path in commands.items():
+        # Load the audio.
+        track = vlc.MediaPlayer(path)
 
-    # make sure the bot ignores itself and the streamer
-    if ctx.author.name.lower() == os.environ["BOT_NICK"].lower():
-        return
+        # Define the command.
+        @bot.command(name=command)
+        async def test(ctx):
+            # Play the track.
+            log.info("Running ", command)
+            track.play()
 
-    await bot.handle_commands(ctx)
+            # Give the player time to load.
+            await asyncio.sleep(1)
 
-    # await ctx.channel.send(ctx.content)
-
-    if "hello" in ctx.content.lower():
-        await ctx.channel.send(f"Hi, @{ctx.author.name}!")
-
-
-@click.command()
-@click.argument("path", type=click.Path(exists=True))
-def main(path):
-    # Play the clip.
-    player = vlc.MediaPlayer(path)
-    player.play()
-
-    # Give the player time to load.
-    sleep(1)
-
-    # Wait for the residual.
-    sleep(player.get_length() / 1000 - 1)
+            # Wait for the rest of the track.
+            await asyncio.sleep(track.get_length() / 1000 - 1)
