@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "61af901c97be9740fc4d008b5dc8c2c7afc9a986568a26e54320a4e3c08b4c4e"
+            "sha256": "843411a9a154f4ef90636643d66a343eda6cb112aaa980ee981b077cf00fb3c5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -54,6 +54,14 @@
             ],
             "version": "==3.0.4"
         },
+        "click": {
+            "hashes": [
+                "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a",
+                "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"
+            ],
+            "index": "pypi",
+            "version": "==7.1.2"
+        },
         "idna": {
             "hashes": [
                 "sha256:7588d1c14ae4c77d74036e8c22ff447b26d0fde8f007354fd48a7814db15b7cb",
@@ -91,13 +99,6 @@
             "index": "pypi",
             "version": "==5.4.5"
         },
-        "playsound": {
-            "hashes": [
-                "sha256:1e83750a5325cbccee03d6e751ba3e78c037ac95b95a3ba1f38d0c5aca9e1a34"
-            ],
-            "index": "pypi",
-            "version": "==1.2.2"
-        },
         "pyaml": {
             "hashes": [
                 "sha256:29a5c2a68660a799103d6949167bd6c7953d031449d08802386372de1db6ad71",
@@ -114,6 +115,14 @@
             "index": "pypi",
             "version": "==0.13.0"
         },
+        "python-vlc": {
+            "hashes": [
+                "sha256:5422b79d347b6419008ee91cfd9663edc37eaf2a0bd8fb9017d4cc2e5f249dda",
+                "sha256:6e6799cae79a1cda737144f6ac72d72d449752c5384fb2b5cb326600626e3bef"
+            ],
+            "index": "pypi",
+            "version": "==3.0.9113"
+        },
         "pyyaml": {
             "hashes": [
                 "sha256:06a0d7ba600ce0b2d2fe2e78453a470b5a6e000a985dd4a4e54e436cc36b0e97",
@@ -129,6 +138,10 @@
                 "sha256:d13155f591e6fcc1ec3b30685d50bf0711574e2c0dfffd7644babf8b5102ca1a"
             ],
             "version": "==5.3.1"
+        },
+        "squak": {
+            "editable": true,
+            "path": "."
         },
         "twitchio": {
             "hashes": [

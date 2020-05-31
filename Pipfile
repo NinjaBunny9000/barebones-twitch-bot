@@ -10,8 +10,10 @@ pylama = "*"
 twitchio = "*"
 pyaml = "*"
 pbr = "*"
-playsound = "*"
 python-dotenv = "*"
+click = "*"
+squak = {editable = true,path = "."}
+python-vlc = "*"
 
 [requires]
 python_version = "3.8"
