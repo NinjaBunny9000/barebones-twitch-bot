@@ -1,17 +1,22 @@
 import click
-import vlc
-from time import sleep
+import logging
+import sys
+from squak.constants import LOG_LEVELS
+
+log = logging.getLogger(__name__)
 
 
 @click.command()
-@click.argument('path', type=click.Path(exists=True))
-def main(path):
-    # Play the clip.
-    player = vlc.MediaPlayer(path)
-    player.play()
-
-    # Give the player time to load.
-    sleep(1)
-
-    # Wait for the residual.
-    sleep(player.get_length()/1000 - 1)
+@click.option(
+    "-ll",
+    "--loglevel",
+    default="warning",
+    help="The log level.",
+    type=click.Choice(LOG_LEVELS.keys(), case_sensitive=False),
+)
+def main(loglevel):
+    """
+    Called to run the bot.
+    """
+    # Setup logging.
+    logging.basicConfig(stream=sys.stderr, level=LOG_LEVELS[loglevel.lower()])
