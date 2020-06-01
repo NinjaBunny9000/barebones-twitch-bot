@@ -1,4 +1,4 @@
-# Squawk Bot
+# Gossip Stone (gstone)
 
 A Twitch bot that lets chat users play audio files in your stream.
 
@@ -25,7 +25,7 @@ pipenv shell
 
 Now you should be able to run the bot:
 ```
-squak --help
+gstone --help
 ```
 
 ## Configuration
@@ -34,8 +34,8 @@ There are two environment variables that you'll need to configure to set
 up the bot. Toss them in a local .env file for convenience:
 
 ```
-SQUAK_TMI_TOKEN=oauth:token
-SQUAK_CLIENT_ID=id
+GSTONE_TMI_TOKEN=oauth:token
+GSTONE_CLIENT_ID=id
 ```
 
 These values are kept in a .env file so that they aren't leaked accidentally
@@ -49,7 +49,7 @@ parameters with their default values:
 nick: <your account name>
 volume: 50 # 0 to 100
 prefix: ! # the prefix for your commands
-greeting: /me is ready to squak # sent when you connect to chat
+greeting: /me is ready to gossip # sent when you connect to chat
 tracks:
   hey listen: listen.mp3
   thank you: thankyou.mp3
@@ -61,5 +61,5 @@ Run the command with the path to the config followed by the name of the
 twitch channel you want to connect to:
 
 ```
-squak config.yaml "rishiramraj"
+gstone config.yaml "rishiramraj"
 ```

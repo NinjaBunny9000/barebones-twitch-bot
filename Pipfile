@@ -12,9 +12,9 @@ pyaml = "*"
 pbr = "*"
 python-dotenv = "*"
 click = "*"
-squak = {editable = true,path = "."}
 python-vlc = "*"
 pyyaml = "*"
+gstone = {editable = true,path = "."}
 
 [requires]
 python_version = "3.8"

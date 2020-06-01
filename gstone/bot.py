@@ -1,7 +1,7 @@
 import logging
 
-from squak.constants import GREETING
-from squak.constants import PREFIX
+from gstone.constants import GREETING
+from gstone.constants import PREFIX
 from twitchio.ext import commands
 
 log = logging.getLogger(__name__)

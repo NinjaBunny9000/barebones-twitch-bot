@@ -9,4 +9,4 @@ LOG_LEVELS = {
 }
 
 PREFIX = "!"
-GREETING = "/me is ready to squak"
+GREETING = "/me is ready to gossip"

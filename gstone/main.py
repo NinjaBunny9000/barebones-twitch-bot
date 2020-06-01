@@ -6,9 +6,9 @@ import sys
 import click
 import yaml
 from dotenv import load_dotenv
-from squak import bot
-from squak import commands
-from squak.constants import LOG_LEVELS
+from gstone import bot
+from gstone import commands
+from gstone.constants import LOG_LEVELS
 
 log = logging.getLogger(__name__)
 
@@ -45,8 +45,8 @@ def main(channel, config, loglevel):
     client_id = os.environ["SQUAK_CLIENT_ID"]
 
     # Setup the bot.
-    squakbot = bot.make(irc_token, client_id, channel, conf)
-    commands.add(conf, squakbot)
+    gstonebot = bot.make(irc_token, client_id, channel, conf)
+    commands.add(conf, gstonebot)
 
     # Run the bot.
-    squakbot.run()
+    gstonebot.run()
