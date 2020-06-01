@@ -1,7 +1,7 @@
 import logging
 import os
-import sys
 import pathlib
+import sys
 
 import click
 import yaml
@@ -28,10 +28,15 @@ def main(channel, config, loglevel):
     A bot that lets chat users play audio files in your stream.
     """
     # Setup logging.
-    logging.basicConfig(stream=sys.stderr, level=LOG_LEVELS[loglevel.lower()])
+    logging.basicConfig(
+        format="%(asctime)s %(levelname)s: %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        stream=sys.stderr,
+        level=LOG_LEVELS[loglevel.lower()],
+    )
 
     # Load the config.
-    path = pathlib.Path('.') / '.env'
+    path = pathlib.Path(".") / ".env"
     load_dotenv(dotenv_path=path)
     conf = yaml.full_load(config)
 

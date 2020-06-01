@@ -1,7 +1,6 @@
 import logging
 
 from squak.constants import GREETING
-from squak.constants import NICK
 from squak.constants import PREFIX
 from twitchio.ext import commands
 
@@ -12,11 +11,10 @@ def make(irc_token, client_id, channel, conf):
     """
     Create and return the bot.
     """
-    nick = conf.get("nick", NICK)
     bot = commands.Bot(
         irc_token=irc_token,
         client_id=client_id,
-        nick=nick,
+        nick=conf["nick"],
         prefix=conf.get("prefix", PREFIX),
         initial_channels=[channel],
     )
@@ -29,7 +27,7 @@ def make(irc_token, client_id, channel, conf):
         """
         greeting = conf.get("greeting", GREETING)
         await bot._ws.send_privmsg(channel, greeting)
-        log.info(" %s is online", nick)
+        log.info("%s is online", conf["nick"])
 
     # Called on every message.
     @bot.event

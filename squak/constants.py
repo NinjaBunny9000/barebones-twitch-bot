@@ -8,6 +8,5 @@ LOG_LEVELS = {
     "critical": logging.CRITICAL,
 }
 
-NICK = "squaker"
 PREFIX = "!"
 GREETING = "/me is ready to squak"
