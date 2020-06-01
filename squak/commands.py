@@ -7,9 +7,9 @@ import vlc
 log = logging.getLogger(__name__)
 
 
-def add(conf, bot):
+def add_tracks(conf, bot):
     """
-    Add custom commands.
+    Add track commands from the config.
     """
     # Decode the arguments.
     commands = conf["commands"]
@@ -20,11 +20,12 @@ def add(conf, bot):
 
     # Track cooldown.
     last_play = None
+    tracks = {}
 
     for command, path in commands.items():
         # Load the audio.
-        track = vlc.MediaPlayer(path)
-        track.audio_set_volume(volume)
+        tracks[command] = vlc.MediaPlayer(path)
+        tracks[command].audio_set_volume(volume)
 
         # Define the command.
         @bot.command(name=command)
@@ -32,7 +33,7 @@ def add(conf, bot):
             log.info(" running %s (%s)", command, path)
 
             # Exit if playing.
-            if track.is_playing():
+            if tracks[command].is_playing():
                 log.info(" %s is currently playing", path)
                 return
 
@@ -46,12 +47,35 @@ def add(conf, bot):
                     return
 
             # Play the track.
-            track.play()
+            tracks[command].play()
             last_play = datetime.now()
 
             # Give the player time to load and wait the full length.
             await asyncio.sleep(1)
-            await asyncio.sleep(track.get_length() / 1000 - 1)
+            await asyncio.sleep(tracks[command].get_length() / 1000 - 1)
 
             # Reset the track.
-            track.stop()
+            tracks[command].stop()
+
+
+def add_list(conf, bot):
+    """
+    Add the list command.
+    """
+    lister = conf.get('list', 'list')
+    commands = conf["commands"]
+    assert lister not in commands
+
+    # Define the command.
+    @bot.command(name=lister)
+    async def list_tracks(ctx):
+        log.info(" running %s", lister)
+        await ctx.send(', '.join(commands.keys()))
+
+
+def add(conf, bot):
+    """
+    Add custom commands.
+    """
+    add_list(conf, bot)
+    add_tracks(conf, bot)
