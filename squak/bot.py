@@ -29,7 +29,7 @@ def make(irc_token, client_id, channel, conf):
         """
         greeting = conf.get("greeting", GREETING)
         await bot._ws.send_privmsg(channel, greeting)
-        log.info("%s is online", nick)
+        log.info(" %s is online", nick)
 
     # Called on every message.
     @bot.event
@@ -37,10 +37,6 @@ def make(irc_token, client_id, channel, conf):
         """
         Runs every time a message is sent in chat.
         """
-        # make sure the bot ignores itself and the streamer
-        if ctx.author.name.lower() == nick.lower():
-            return
-
         # Handle commands.
         await bot.handle_commands(ctx)
 

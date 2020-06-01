@@ -34,12 +34,14 @@ def main(channel, config, loglevel):
     path = pathlib.Path('.') / '.env'
     load_dotenv(dotenv_path=path)
     conf = yaml.full_load(config)
+
+    # Decode the config.
     irc_token = os.environ["SQUAK_TMI_TOKEN"]
     client_id = os.environ["SQUAK_CLIENT_ID"]
 
     # Setup the bot.
     squakbot = bot.make(irc_token, client_id, channel, conf)
-    commands.add(conf["commands"], squakbot)
+    commands.add(conf, squakbot)
 
     # Run the bot.
     squakbot.run()
